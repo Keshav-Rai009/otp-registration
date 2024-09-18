@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@vonage/server-sdk": "^3.17.0",
+    "react-native-webview": "^13.12.2"
+  },
+  "packageManager": "yarn@3.6.4"
+}
