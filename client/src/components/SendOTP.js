@@ -75,20 +75,8 @@ function SendOtp({ onOtpSent }) {
         gutterBottom
         sx={{ padding: "1rem", textAlign: "center" }}
       >
-        Sign Up
+        Register with 1Fi
       </Typography>
-
-      {/* Email Input with Validation */}
-      <TextField
-        label="Enter Email"
-        variant="outlined"
-        fullWidth
-        value={email}
-        onChange={(e) => handleEmail(e.target.value)}
-        error={emailError} // Triggers red border if error is true
-        helperText={emailError ? "Please enter a valid email address" : ""} // Error message
-        sx={{ mb: 2 }}
-      />
 
       {/* Phone Input with Validation */}
       <TextField
@@ -103,6 +91,18 @@ function SendOtp({ onOtpSent }) {
             ? "Please enter a valid 10-digit phone number with country code"
             : ""
         } // Error message
+        sx={{ mb: 2 }}
+      />
+
+      {/* Email Input with Validation */}
+      <TextField
+        label="Enter Email"
+        variant="outlined"
+        fullWidth
+        value={email}
+        onChange={(e) => handleEmail(e.target.value)}
+        error={emailError} // Triggers red border if error is true
+        helperText={emailError ? "Please enter a valid email address" : ""} // Error message
         sx={{ mb: 2 }}
       />
 
