@@ -1,4 +1,4 @@
-// server.js
+require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
@@ -10,8 +10,9 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json()); // Middleware
 
+console.log(",,", process.env.MONGODB_URI, PORT);
 mongoose
-  .connect("mongodb://localhost:27017/OTP", {
+  .connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
