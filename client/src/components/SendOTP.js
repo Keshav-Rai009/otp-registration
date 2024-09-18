@@ -10,6 +10,11 @@ function SendOtp({ onOtpSent }) {
   const [otpBtnText, setOtpBtnText] = useState("Send OTP");
   const [disableButton, setDisableButton] = useState(true);
 
+  const baseUrl =
+    process.env.NODE_ENV === "production"
+      ? "https://otp-registration-oxly.vercel.app"
+      : "http://localhost:3000";
+
   // Email validation regex
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -49,7 +54,7 @@ function SendOtp({ onOtpSent }) {
     }
     try {
       setOtpText("Sending OTPs. Please wait...");
-      const response = await fetch("/api/auth/send-otp", {
+      const response = await fetch(`${baseUrl}/api/auth/send-otp`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
